@@ -125,7 +125,3 @@ int main()
     return 0;
 }
 ```
-
-Ejemplo en Consola:
-
-![Demostración](https://user-images.githubusercontent.com/54363893/135954867-b13f7c5b-2401-4c3d-a287-f76ce19383ff.PNG)
