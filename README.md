@@ -15,47 +15,114 @@ Laboratorio 4
 EXPLICACIÓN DEL CODIGO CON COMENTARIOS:
 
 ```c ++
-#include <iostream>
+#include<bits/stdc++.h>
+#include <iostream> 
 using namespace std;
 
-int mcd(int numero1, int numero2) 
+// Devuelve verdadera si n es primo
+bool esPrimo(int n)
 {
-    int s, t;
-    int s_a = 1;
-    int s_b = 0;
-    int t_a = 0;
-    int t_b = 1;
+    if (n <= 1)  return false;
+    if (n <= 3)  return true;
 
-    while (numero2 > 0) //mientras el numero2 que fue ingresado sea mayor que cero, seguira iterando hasta obtener el ultimo valor.
-    {
-        int cociente = numero1 / numero2; //obtenemos el cociente
-        int residuo = numero1 - cociente * numero2; //obtenemos el residuo
-        numero1 = numero2; // al numero1 se le asigna el valor del numero2
-        numero2 = residuo; // al numero2 se le asigna el valor del residuo
-        s = s_a - cociente * s_b;
-        s_a = s_b;
-        s_b = s;
-        t = t_a - cociente * t_b;
-        t_a = t_b;
-        t_b = t;
-    }
+    if (n % 2 == 0 || n % 3 == 0) return false;
 
-    s = s_a; // nos retorna el valor de la "x"
-    t = t_a; // nos retorna el valor de la "y"
+    for (int i = 5; i * i <= n; i = i + 6)
+        if (n % i == 0 || n % (i + 2) == 0)
+            return false;
 
-    cout << "valor de x: " << s << endl << "valor de y: " << t << endl;
-    return numero1; // retorna el maximo comun divisor
+    return true;
 }
 
-
-int main() 
+/* Función iterativa para calcular (x^n)%p en O(logy) */
+int potencia(int x, unsigned int y, int p)
 {
-    int numero1, numero2;
-    cout << "Ingresa el primer valor: "; cin >> numero1; // ingresamos nuestro primer valor
-    cout << "Ingresa el segundo valor: "; cin >> numero2; // ingresamos nuestro segundo valor
+    int res = 1;     // Inicializar resultado
 
-    int respuesta = mcd(numero1, numero2);
-    cout << "El máximo común divisor de (" << numero1 << ", " << numero2 << ") es: " << respuesta << endl; //imprime el mcd
+    x = x % p; // Actualizar x si es mayor o igual que p
+
+    while (y > 0)
+    {
+        // Si y es impar, multiplica x con el resultado
+        if (y & 1)
+            res = (res * x) % p;
+
+        y = y >> 1; // y = y/2
+        x = (x * x) % p;
+    }
+    return res;
+}
+
+// Función para almacenar factores primos de un número
+void encontrarFactoresPrimos(unordered_set<int>& s, int n)
+{
+    // Imprime el número de 2 que dividen n
+    while (n % 2 == 0)
+    {
+        s.insert(2);
+        n = n / 2;
+    }
+
+    for (int i = 3; i <= sqrt(n); i = i + 2)
+    {
+        // Mientras i divide n, imprime i y divide n
+        while (n % i == 0)
+        {
+            s.insert(i);
+            n = n / i;
+        }
+    }
+
+    // Esta condición es para manejar el caso cuando n es un número primo mayor que 2
+    if (n > 2)
+        s.insert(n);
+}
+
+// Función para encontrar la raíz primitiva más pequeña de n
+int encontrarPrimitivo(int n)
+{
+    unordered_set<int> s;
+    // Comprueba si n es primo o no
+    if (isPrime(n) == false)
+        return -1;
+
+    // Encuentra el valor de la función Euler de n Dado que n es un número primo, el valor de la función Euler es n-1 ya que hay n-1 números primos relativos.
+    int phi = n - 1;
+
+    encontrarFactoresPrimos(s, phi);
+
+    // Comprueba todos los números del 2 al phi
+
+    for (int r = 2; r <= phi; r++)
+    {
+        // Itera todos los factores primos de phi y verifique si encontramos una potencia con valor 1
+        bool flag = false;
+        for (auto it = s.begin(); it != s.end(); it++)
+        {
+
+            // Verificar si r^((phi)/factoresPrimos) mod n
+            // es 1 o no
+            if (power(r, phi / (*it), n) == 1)
+            {
+                flag = true;
+                break;
+            }
+        }
+
+        if (flag == false)
+            return r;
+    }
+
+    // Si no se encuentra una raíz primitiva
+    return -1;
+}
+
+int main()
+{
+    int n = 100049;
+    cout << " La raiz primitiva más pequeña de " << n
+        << " es " << encontrarPrimitivo(n);
+    return 0;
 }
 ```
 
