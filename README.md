@@ -1,5 +1,5 @@
 # Álgebra-Abstracta-Italo-Kancha-Vilca
-Laboratorio 02b
+Laboratorio 4
 
 **NOMBRE:** Italo kancha vilca
 
