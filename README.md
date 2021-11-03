@@ -12,6 +12,11 @@ Laboratorio 4
  
 ![image](https://user-images.githubusercontent.com/54363893/139969666-19e20da6-261c-4567-8ee3-2295db46d408.png)
 
+ - Me guie de los siguientes páginas:
+ ... https://www.dreamincode.net/forums/topic/40490-primitive-roots-in-c/
+ ... https://programmerclick.com/article/98241123826/
+ ... http://hojamat.es/parra/raizprim.pdf
+
 EXPLICACIÓN DEL CODIGO CON COMENTARIOS:
 
 ```c ++
