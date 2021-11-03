@@ -6,7 +6,7 @@ Laboratorio 4
 **grupo:** Ccomp 3-1
 
 
- 2.- Implementar un programa que permita calcular su ra´ız primitiva m´as peque˜na:
+ 2.- Implementar un programa que permita calcular su raíz primitiva más pequeña:
  
  - En este algortimo hallaremos el máximo común divisor de dos números y el valor de "x" y "y" de la fórmula.
  
