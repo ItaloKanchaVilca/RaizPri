@@ -12,12 +12,6 @@ Laboratorio 4
  
 ![image](https://user-images.githubusercontent.com/54363893/139969666-19e20da6-261c-4567-8ee3-2295db46d408.png)
 
-PARA LA EJECUCIÓN:
-
-- se debe ingresar dos valores 
-
-![tgfdgfdgfdg](https://user-images.githubusercontent.com/54363893/135958753-eef18b5f-c553-4e70-8329-e1c5769f207d.png)
-
 EXPLICACIÓN DEL CODIGO CON COMENTARIOS:
 
 ```c ++
