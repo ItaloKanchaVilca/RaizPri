@@ -6,11 +6,11 @@ Laboratorio 4
 **grupo:** Ccomp 3-1
 
 
- 2.- Implementar un programa que permita calcular su raíz primitiva más pequeña:
+ 1.- Implementar un programa que permita calcular su raíz primitiva más pequeña:
  
- - En este algortimo hallaremos el máximo común divisor de dos números y el valor de "x" y "y" de la fórmula.
+ - ¿Cual es la raíz primitiva más pequeña de 100049?
  
-![euclidesssssssssss](https://user-images.githubusercontent.com/54363893/135957346-ae18d6ed-6eba-4a06-a41f-cf1249d268ea.PNG)
+![image](https://user-images.githubusercontent.com/54363893/139969666-19e20da6-261c-4567-8ee3-2295db46d408.png)
 
 PARA LA EJECUCIÓN:
 
