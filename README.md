@@ -83,7 +83,7 @@ int encontrarPrimitivo(int n)
 {
     unordered_set<int> s;
     // Comprueba si n es primo o no
-    if (isPrime(n) == false)
+    if (esPrimo(n) == false)
         return -1;
 
     // Encuentra el valor de la función Euler de n Dado que n es un número primo, el valor de la función Euler es n-1 ya que hay n-1 números primos relativos.
@@ -102,7 +102,7 @@ int encontrarPrimitivo(int n)
 
             // Verificar si r^((phi)/factoresPrimos) mod n
             // es 1 o no
-            if (power(r, phi / (*it), n) == 1)
+            if (potencia(r, phi / (*it), n) == 1)
             {
                 flag = true;
                 break;
